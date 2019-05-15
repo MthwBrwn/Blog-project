@@ -1,9 +1,7 @@
-
 {% extends "blogpage/base.html" %}
 {% block content %}
 
-    <h1> This is the home for the blog! </h1>
-    
+    <h4 class="mb-3"> These are the posts for {{view.kwargs.username}}  ({{ page_obj.paginator.count}} pages written)</h4>
     {% for post in posts %}
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt=" image of the blog article author">
